@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server",
     "debug": "ndb server.js",
-    "server": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "vercel-build": "echo hello"
   },
   "author": "Truong-Duc-Thang",
   "license": "ISC",
