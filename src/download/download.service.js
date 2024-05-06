@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-
+const uploadMulter = require('../files/ModelMulter');
 const baseUrl = 'http://localhost:4000/files/';
 exports.downloadFile = async (req, res, next) => {
   try {
@@ -18,6 +18,18 @@ exports.downloadFile = async (req, res, next) => {
     //   status: 'success',
     //   data: null,
     // });
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.uploadFile = async (req, res, next) => {
+  try {
+    // uploadMulter.single('file');
+    res.status(201).json({
+      status: 'success',
+      data: null,
+    });
   } catch (error) {
     next(error);
   }
