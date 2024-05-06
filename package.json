@@ -2,9 +2,9 @@
   "name": "ultra-card-web-app",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node api/index.js",
     "debug": "ndb server.js",
     "dev": "nodemon server.js",
     "vercel-build": "echo hello"
