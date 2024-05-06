@@ -28,7 +28,7 @@ exports.uploadFile = async (req, res, next) => {
     // uploadMulter.single('file');
     res.status(201).json({
       status: 'success',
-      data: null,
+      data: req.file,
     });
   } catch (error) {
     next(error);
