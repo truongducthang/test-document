@@ -7,7 +7,6 @@ var storage = multer.diskStorage({
     cb(null, './public/uploads/'); //hỉnh ảnh sẽ chưa trong folder uploads
   },
   filename: (req, file, cb) => {
-    console.log('file:>>', file);
     const fileName = file.originalname.toLowerCase().split(' ').join('-');
     const saveFileName = uuidv4() + '-' + fileName;
     cb(null, saveFileName); // mặc định sẽ save name của hình ảnh
