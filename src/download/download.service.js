@@ -6,7 +6,7 @@ exports.downloadFile = async (req, res, next) => {
   try {
     const directoryPath = __basedir + '/public/files/';
 
-    const filename = request.params.filename;
+    const filename = req.params.filename;
     console.log('directoryPath + filename', directoryPath + filename);
     res.download(directoryPath + filename, filename, (error) => {
       if (error) {
