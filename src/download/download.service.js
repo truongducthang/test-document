@@ -5,7 +5,8 @@ const baseUrl = 'http://localhost:4000/files/';
 exports.downloadFile = async (req, res, next) => {
   try {
     const directoryPath = __basedir + '/public/files/';
-    const filename = 'sample.ppt';
+
+    const filename = request.params.filename;
     console.log('directoryPath + filename', directoryPath + filename);
     res.download(directoryPath + filename, filename, (error) => {
       if (error) {
