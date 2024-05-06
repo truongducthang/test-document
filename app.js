@@ -10,10 +10,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //Router
 const userRoutes = require('./src/user/user.router');
+const downloadRoutes = require('./src/download/download.router');
 
 const globalErrHandler = require('./src/error/error');
 const AppError = require('./utils/appError');
 const path = require('path');
+
+global.__basedir = __dirname;
 
 const app = express();
 //setup
@@ -65,6 +68,7 @@ app.get('/', function (req, res) {
   res.sendFile(duongDanFile);
 });
 app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/downloads', downloadRoutes);
 
 //end Routers
 
